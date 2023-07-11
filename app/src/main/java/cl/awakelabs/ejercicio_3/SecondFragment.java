@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -26,7 +27,7 @@ public class SecondFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     private FragmentSecondBinding binding;
-    private int radioGroup = -1;
+    private final int radioGroup = -1;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -70,6 +71,23 @@ public class SecondFragment extends Fragment {
         binding = FragmentSecondBinding.inflate(getLayoutInflater());
         binding.textName.setText("Hola, "+ mParam1);
 
+        binding.btnAsk.setOnClickListener(view -> {
+            if (binding.radGroup.getCheckedRadioButtonId() == binding.radBtn4.getId()) {
+                Bundle correct = new Bundle();
+                correct.putString("La Respuesta", "Correcta");
+                correct.putString("nombre",mParam1);
+                Navigation.findNavController(getView()).navigate(R.id.action_secondFragment_to_thirdFragment);
+            } else if(binding.radGroup.getCheckedRadioButtonId() == -1){
+                Toast.makeText(getContext(), "Debes seleccionar una respuesta", Toast.LENGTH_SHORT).show();
+            }else {
+                Bundle wrong = new Bundle();
+                wrong.putString("Respuesta","Incorrecta");
+                wrong.putString("nombre",mParam1);
+                Navigation.findNavController(getView()).navigate(R.id.action_secondFragment_to_thirdFragment);
+            }
+        });
         return binding.getRoot();
     }
+
+
 }
