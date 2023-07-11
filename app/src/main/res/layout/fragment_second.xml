@@ -5,33 +5,19 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondFragment" >
-
-    <TextView
-        android:id="@+id/textQuestion"
-        android:layout_width="397dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="4dp"
-        android:background="#25D366"
-        android:text="@string/pregunta_a_quien_pertenece_este_logo"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TextSizeCheck" />
+    tools:context=".SecondFragment">
 
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="174dp"
         android:layout_height="177dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:contentDescription="@string/logo"
         android:src="@drawable/whatsapp__1_"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textQuestion"
+        app:layout_constraintTop_toBottomOf="@+id/textName"
         tools:ignore="ImageContrastCheck" />
 
     <RadioGroup
@@ -45,28 +31,28 @@
         tools:ignore="TextSizeCheck">
 
         <RadioButton
-            android:id="@+id/btn1"
+            android:id="@+id/radBtn1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/facebook"
             android:textSize="20sp" />
 
         <RadioButton
-            android:id="@+id/btn2"
+            android:id="@+id/radBtn2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/twitter"
             android:textSize="20sp" />
 
         <RadioButton
-            android:id="@+id/btn3"
+            android:id="@+id/radBtn3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/kfc"
             android:textSize="20sp" />
 
         <RadioButton
-            android:id="@+id/btn4"
+            android:id="@+id/radBtn4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/wathsapp"
@@ -75,13 +61,13 @@
 
     <TextView
         android:id="@+id/textOptions"
-        android:layout_width="173dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="44dp"
-        android:text="@string/elija_una_opcion"
-        android:textSize="22sp"
+        android:layout_width="313dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/a_quien_pertenece_el_logo"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/imgLogo"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/imgLogo"
         app:layout_constraintTop_toBottomOf="@+id/imgLogo"
         tools:ignore="TextSizeCheck" />
@@ -99,5 +85,16 @@
         app:layout_constraintEnd_toEndOf="@+id/radGroup"
         app:layout_constraintStart_toStartOf="@+id/radGroup"
         app:layout_constraintTop_toBottomOf="@+id/radGroup"
-        app:layout_constraintVertical_bias="0.075" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textName"
+        android:layout_width="299dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="44dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
